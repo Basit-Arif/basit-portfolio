@@ -9,6 +9,6 @@ In my role within the human capital department of a prominent corporation, I add
 - **Data Analysis:** We conducted a comprehensive analysis, utilizing diverse data sources to gain insights into employee churn patterns.
 - **Findings:** Our research unearthed critical factors influencing turnover, providing a deep understanding of the issue.
 - **Recommendations:** Based on our findings, we formulated practical recommendations to curb employee turnover and enhance organizational stability.
-![alt text]([image.jpg](https://github.com/Basit-Arif/basit-portfolio/blob/main/Screenshot%202023-09-08%20at%203.52.25%20AM.png)https://github.com/Basit-Arif/basit-portfolio/blob/main/Screenshot%202023-09-08%20at%203.52.25%20AM.png) 
+ 
 [Explore the Project](https://app.datacamp.com/workspace/w/123973a4-159c-4f2c-9274-28e23f47d972)
 
