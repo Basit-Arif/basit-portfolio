@@ -17,10 +17,10 @@ In my role within the human capital department of a prominent corporation, I add
 ### Certificates
 
 Here is the certificates  
-[Convolutional Neural Network](https://www.coursera.org/account/accomplishments/certificate/GXNEPZGWCUMA)
-[Neural Networks and Deep Learning](https://www.coursera.org/account/accomplishments/certificate/GXNEPZGWCUMA)
-[Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization](https://www.coursera.org/account/accomplishments/certificate/H58LFSY26H6D)
-[Structuring Machine Learning Projects](https://www.coursera.org/account/accomplishments/certificate/XKULD8EUXX2Y)
+- [Convolutional Neural Network](https://www.coursera.org/account/accomplishments/certificate/GXNEPZGWCUMA)
+- [Neural Networks and Deep Learning](https://www.coursera.org/account/accomplishments/certificate/GXNEPZGWCUMA)
+- [Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization](https://www.coursera.org/account/accomplishments/certificate/H58LFSY26H6D)
+- [Structuring Machine Learning Projects](https://www.coursera.org/account/accomplishments/certificate/XKULD8EUXX2Y)
 
 
 
