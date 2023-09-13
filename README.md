@@ -21,6 +21,8 @@ Here is the certificates
 - [Neural Networks and Deep Learning](https://www.coursera.org/account/accomplishments/certificate/GXNEPZGWCUMA)
 - [Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization](https://www.coursera.org/account/accomplishments/certificate/H58LFSY26H6D)
 - [Structuring Machine Learning Projects](https://www.coursera.org/account/accomplishments/certificate/XKULD8EUXX2Y)
+- [Basic Image Classification with TensorFlow](https://www.coursera.org/account/accomplishments/certificate/3Z5J6LAVMEPE)
+- 
 
 
 
