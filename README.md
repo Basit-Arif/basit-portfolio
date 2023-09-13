@@ -22,7 +22,8 @@ Here is the certificates
 - [Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization](https://www.coursera.org/account/accomplishments/certificate/H58LFSY26H6D)
 - [Structuring Machine Learning Projects](https://www.coursera.org/account/accomplishments/certificate/XKULD8EUXX2Y)
 - [Basic Image Classification with TensorFlow](https://www.coursera.org/account/accomplishments/certificate/3Z5J6LAVMEPE)
-- 
+- [Database Design](https://www.datacamp.com/statement-of-accomplishment/course/232732c939b94076d03ec528c0087c83e79be81e?raw=1)
+- [Data Manipulation with pandas](https://www.datacamp.com/statement-of-accomplishment/course/207de4e7848609876076b890f402d7099c47df70?raw=1)
 
 
 
