@@ -12,3 +12,11 @@ In my role within the human capital department of a prominent corporation, I add
  
 [Explore the Project](https://app.datacamp.com/workspace/w/123973a4-159c-4f2c-9274-28e23f47d972)
 
+
+
+### Certificates
+
+Here is the certificates  
+[Convolutional Neural Network]([https://www.example.com](https://github.com/Basit-Arif/basit-portfolio/blob/b84d4fbaf56b1a739fc3f33d634029d2018a100c/certificates/Convolutional%20network.pdf)https://github.com/Basit-Arif/basit-portfolio/blob/b84d4fbaf56b1a739fc3f33d634029d2018a100c/certificates/Convolutional%20network.pdf)
+
+
