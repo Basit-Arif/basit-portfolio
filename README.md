@@ -17,6 +17,6 @@ In my role within the human capital department of a prominent corporation, I add
 ### Certificates
 
 Here is the certificates  
-[Convolutional Neural Network]([https://www.example.com](https://github.com/Basit-Arif/basit-portfolio/blob/b84d4fbaf56b1a739fc3f33d634029d2018a100c/certificates/Convolutional%20network.pdf)https://github.com/Basit-Arif/basit-portfolio/blob/b84d4fbaf56b1a739fc3f33d634029d2018a100c/certificates/Convolutional%20network.pdf)
+[Convolutional Neural Network]((https://github.com/Basit-Arif/basit-portfolio/blob/b84d4fbaf56b1a739fc3f33d634029d2018a100c/certificates/Convolutional%20network.pdf)https://github.com/Basit-Arif/basit-portfolio/blob/b84d4fbaf56b1a739fc3f33d634029d2018a100c/certificates/Convolutional%20network.pdf)
 
 
