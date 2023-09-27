@@ -12,6 +12,22 @@ In my role within the human capital department of a prominent corporation, I add
  
 [Explore the Project](https://app.datacamp.com/workspace/w/123973a4-159c-4f2c-9274-28e23f47d972)
 
+## Project 2(guided): Mobile Games A/B Testing with Cookie Cats
+In this project, I conducted an A/B test to assess player retention over 1 day and 7 days, while examining the impact of variations at "gate_30" and "gate_40." The analysis aimed to determine if these variations influenced player engagement and retention, providing insights for game design decisions
+
+## Project Details(guided)
+**Methodology:**
+- Bootstrap Resampling:
+ Generated multiple resampled datasets to assess the variability in player retention.
+ Focused on comparing player retention rates between "gate_30" and "gate_40" variations
+**Analysis:**
+- Calculated the Difference in Means:
+   - Computed the difference in player retention means for "gate_30" and "gate_40" variations.
+   - Assessed if the observed difference was statistically significant.
+**Result:**
+- Found:
+  - Variability in player retention across samples.
+  - Significantly higher player retention at "gate_30" compared to "gate_40."
 
 
 ### Certificates
