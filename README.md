@@ -28,6 +28,7 @@ In this project, I conducted an A/B test to assess player retention over 1 day a
 - Found:
   - Variability in player retention across samples.
   - Significantly higher player retention at "gate_30" compared to "gate_40."
+    
 [Explore the Project](https://github.com/Basit-Arif/datascience_project/blob/main/AB_Testing/Testing%20with%20Cookie%20Cats/notebook.ipynb)
 
 ### Certificates
