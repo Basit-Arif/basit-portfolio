@@ -31,6 +31,11 @@ In this project, I conducted an A/B test to assess player retention over 1 day a
     
 [Explore the Project](https://github.com/Basit-Arif/datascience_project/blob/main/AB_Testing/Testing%20with%20Cookie%20Cats/notebook.ipynb)
 
+
+## Educational Resources
+ - Normal Distribution Notebook: [link](https://www.kaggle.com/code/basitarif/normal-distribution/notebook)
+ - Binomial Distribution Notebook: [link](https://www.kaggle.com/code/basitarif/binomialdistribution)
+   
 ### Certificates
 
 Here is the certificates  
@@ -41,6 +46,7 @@ Here is the certificates
 - [Basic Image Classification with TensorFlow](https://www.coursera.org/account/accomplishments/certificate/3Z5J6LAVMEPE)
 - [Database Design](https://www.datacamp.com/statement-of-accomplishment/course/232732c939b94076d03ec528c0087c83e79be81e?raw=1)
 - [Data Manipulation with pandas](https://www.datacamp.com/statement-of-accomplishment/course/207de4e7848609876076b890f402d7099c47df70?raw=1)
+
 
 
 
