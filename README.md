@@ -6,8 +6,7 @@ This is where I keep my projects that I really like and have learned important s
 In my role within the human capital department of a prominent corporation, I addressed a pressing concern: high employee turnover. The Board's apprehension prompted our team to embark on a mission to understand the underlying causes and propose effective retention strategies.
 
 ## Project Details
-- **Data Analysis:** We conducted a comprehensive analysis, utilizing diverse data sources to gain insights into employee churn patterns.
-- **Findings:** Our research revealed the main reasons behind employee turnover, giving us a better understanding of the issue.
+- **Findings:** Our Finding revealed the main reasons behind employee turnover, giving us a better understanding of the issue.
 - **Recommendations:** We applied our findings to develop practical strategies for reducing employee turnover and enhancing organizational stability.
  
 [Explore the Project](https://app.datacamp.com/workspace/w/123973a4-159c-4f2c-9274-28e23f47d972)
