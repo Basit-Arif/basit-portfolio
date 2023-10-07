@@ -30,6 +30,19 @@ In this project, I conducted an A/B test to assess player retention over 1 day a
     
 [Explore the Project](https://github.com/Basit-Arif/datascience_project/blob/main/AB_Testing/Testing%20with%20Cookie%20Cats/notebook.ipynb)
 
+## Project 3: Titanic Dataset 
+The main objective when working with the Titanic dataset is often to predict whether a passenger survived or not based on the other available features. It is a common dataset for practicing data preprocessing, exploratory data analysis, feature engineering, and machine learning classification algorithms.
+
+## Project Details
+**Methodology:**
+- Data Cleaning and Preprocessing:
+- Clean and preprocess the raw data to make it suitable for analysis. This may include handling missing values, dealing with outliers, standardizing data types, and feature engineering
+**Analysis:**
+- Model Evaluation:
+   - Evaluate the models using appropriate metrics (accuracy, precision, recall, F1-score, RMSE, etc.). Compare models to select the best-performing one
+
+[Explore the Project](https://www.kaggle.com/code/basitarif/learning-titanic10-09)
+
 
 ## Educational Resources
  - Normal Distribution Notebook: [link](https://www.kaggle.com/code/basitarif/normal-distribution/notebook)
