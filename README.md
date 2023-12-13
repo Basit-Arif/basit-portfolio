@@ -59,6 +59,13 @@ Here is the certificates
 - [Database Design](https://www.datacamp.com/statement-of-accomplishment/course/232732c939b94076d03ec528c0087c83e79be81e?raw=1)
 - [Data Manipulation with pandas](https://www.datacamp.com/statement-of-accomplishment/course/207de4e7848609876076b890f402d7099c47df70?raw=1)
 
+## Link to Social Media 
+- You can find me on LinkedIn here: [LinkedIn](https://www.linkedin.com/in/sara-
+tariffi/)</s> </s>
+- You can find me on Medium here: [LinkedIn](https://www.linkedin.com/in/sara-
+tariffi/)
+
+
 
 
 
