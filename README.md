@@ -1,4 +1,7 @@
-# basit-portfolio
+# About Me 
+  Hey! I'm <b style="color:green">Abdul Basit</b>, and I graduated in Computer Science. I'm really into cool tech stuff like machine learning, deep learning, and generative AI. Studying computer science gave me a solid base, and I'm super excited about these fields. I love how AI can totally change industries and make things better for everyone. I'm always eager to learn and be a part of this creative tech world where anything is possible!
+
+## Portfolio 
 This is where I keep my projects that I really like and have learned important stuff from. These projects show off what I can do and what I've learned. I've worked hard on each one, and they're like my trophies. So, when you look at them, you'll see the cool things I've done and the lessons I've learned. Take a look and see what I'm all about!
 
 
@@ -60,11 +63,11 @@ Here is the certificates
 - [Data Manipulation with pandas](https://www.datacamp.com/statement-of-accomplishment/course/207de4e7848609876076b890f402d7099c47df70?raw=1)
 
 ## Link to Social Media 
-- You can find me on LinkedIn here: [LinkedIn](https://www.linkedin.com/in/sara-
-tariffi/)</s> </s>
-- You can find me on Medium here: [LinkedIn](https://www.linkedin.com/in/sara-
-tariffi/)
-
+- [LinkedIn](https://www.linkedin.com/in/abdul-basit-531a97189/)
+- [Medium](https://medium.com/@basitarif235)
+- [Twitter](https://twitter.com/__Abdul_Basit)
+- [Github](https://github.com/Basit-Arif)
+- [Kaggle](https://www.kaggle.com/basitarif)
 
 
 
