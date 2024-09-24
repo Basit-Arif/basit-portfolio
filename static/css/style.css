@@ -312,39 +312,58 @@ header nav ul li a:hover {
 }
 
 /* Text styling */
+.#portfolio {
+    background-color: #f8f8f8; /* Light background for a clean, professional look */
+    padding: 50px 0; /* Increased padding for more breathing room */
+}
+
+/* Flexbox layout for desktop */
+.portfolio-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between items */
+    max-width: 1200px; /* Adjusted for better fit on most screens */
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px; /* Side padding to avoid content touching screen edges */
+}
+
+/* Text styling */
 .portfolio-text {
     flex: 2; /* Allow more space for text */
-    text-align: center;
-    padding: 0 40px;
+    padding: 0 20px; /* Reduced padding for better fit on smaller screens */
 }
 
 .portfolio-text h1 {
-    font-family: 'Poppins', 'Arial'; /* Font similar to the screenshot */
+    font-family: 'Poppins', 'Arial', sans-serif; /* Sans-serif fallback for better compatibility */
     font-weight: 700;
-    font-size: 3.5rem; /* Adjust size as per your preference */
+    font-size: 3rem; /* Adjusted size for balance */
     color: #3080b5; /* Professional dark blue color */
+    margin-bottom: 20px; /* Spacing under the title */
 }
 
 /* Image styling */
 .portfolio-image img {
-    max-width: 150px; /* Adjust size as needed */
+    max-width: 180px; /* Increased size for better visibility */
     object-fit: contain;
 }
 
 .portfolio-image.left {
-    flex: 1; /* Adjust space for the left image */
+    flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end; /* Align the left image to the right */
+    padding-right: 20px;
 }
 
 .portfolio-image.right {
-    flex: 1; /* Adjust space for the right image */
+    flex: 1;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-start; /* Align the right image to the left */
+    padding-left: 20px;
 }
 
 /* Ensure responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .portfolio-container {
         flex-direction: column;
     }
@@ -355,7 +374,38 @@ header nav ul li a:hover {
     }
 
     .portfolio-text h1 {
+        font-size: 2.5rem; /* Adjusted font size for tablet screens */
+    }
+}
+
+/* Further adjustments for mobile devices */
+@media (max-width: 768px) {
+    .portfolio-container {
+        flex-direction: column;
+        padding: 0 10px; /* Smaller padding for narrow screens */
+    }
+
+    .portfolio-text h1 {
         font-size: 2rem; /* Adjust font size for mobile */
+    }
+
+    .portfolio-image img {
+        max-width: 120px; /* Smaller image size for mobile */
+    }
+}
+
+/* Smallest devices (phones in portrait mode) */
+@media (max-width: 480px) {
+    .portfolio-text h1 {
+        font-size: 1.8rem; /* Smaller heading size for very small screens */
+    }
+
+    .portfolio-image img {
+        max-width: 100px; /* Further reduce image size */
+    }
+
+    .portfolio-text {
+        padding: 0 10px; /* Extra padding reduction */
     }
 }
 
