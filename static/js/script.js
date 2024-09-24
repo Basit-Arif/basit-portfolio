@@ -41,10 +41,16 @@ $(document).ready(function() {
             }, 500); // Wait for the slide duration
         }
     }
+    
 
     // Set an interval to change slides every 3 seconds
     setInterval(slide, 3000);
 });
+function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    nav.classList.toggle('show');
+}
+
 
 
     
