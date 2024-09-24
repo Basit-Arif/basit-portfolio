@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #1884f1; 
+    
     color: #343A40; 
     font-family: 'Poppins', 'Arial', sans-serif;
     
@@ -24,22 +24,12 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-header {
-    background-color: #C3DEF0;
-    color: #000000;
-    padding: 20px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
 header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100%; /* Ensure nav doesn't overflow */
+    /* max-width: 1200px; */
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -58,7 +48,8 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #000000;
+    /* color: white; */
+    color:#000000;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
@@ -67,7 +58,6 @@ header nav ul li a {
 header nav ul li a:hover {
     color: #E67E22; /* Highlight color on hover */
 }
-
 .hamburger {
     display: none;
     flex-direction: column;
@@ -80,22 +70,21 @@ header nav ul li a:hover {
     background-color: #000;
     margin: 4px 0;
 }
-
-/* Media Queries for mobile responsiveness */
 @media (max-width: 768px) {
     header nav ul {
         flex-direction: column;
         position: absolute;
         top: 60px;
-        left: -100%; /* Hidden off-screen by default */
-        width: 100%; /* Use full width for menu */
+        left: -100%;
+        width: auto;
         background-color: #C3DEF0;
         transition: left 0.3s ease;
         padding: 10px 0;
+        
     }
 
     header nav ul.show {
-        left: 0; /* Slide menu into view */
+        left: 0;
     }
 
     header nav ul li {
@@ -112,6 +101,7 @@ header nav ul li a:hover {
     }
 }
 
+/* Media query for smaller mobile devices */
 @media (max-width: 480px) {
     header nav h1 {
         font-size: 1.3rem;
@@ -120,12 +110,8 @@ header nav ul li a:hover {
     .hamburger div {
         width: 20px;
     }
-
-    header nav {
-        padding: 0 10px; /* Reduced padding for smaller screens */
-        width: 100%; /* Ensure nav takes full width */
-    }
-}
+    
+    
 
 }
 
@@ -430,9 +416,8 @@ header nav ul li a:hover {
 
 /* About Section */
 #about {
-    padding: 50px 20px;
-    background-color: #F5F5F5;
-    
+    padding: 60px 20px;
+    background-color: #f9f9f9;
 }
 
 /* About container layout */
@@ -442,8 +427,6 @@ header nav ul li a:hover {
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
-    
     flex-wrap: wrap; /* Ensures responsiveness */
 }
 
@@ -453,6 +436,7 @@ header nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .about-image {
@@ -463,57 +447,22 @@ header nav ul li a:hover {
 }
 
 /* Right section for text */
-#about {
-    padding: 60px 0;
-    background-color: #f9f9f9;
-}
-
-.about-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-/* About Left Section */
-.about-left {
-    flex: 1;
-}
-
-.about-left img {
-    width: 100%;
-    border-radius: 15px;
-    max-width: 500px;
-}
-
-/* About Right Section */
 .about-right {
     flex: 1;
-    padding-left: 40px;
-
+    padding: 20px;
 }
 
 .about-right h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    margin-top: 20px;
+    font-size: 2.2rem;
     margin-bottom: 20px;
 }
 
 .about-right p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     color: #555;
-}
-
-.skills, .achievements, .projects {
-    margin-top: 20px;
-}
-.projects p{
-    margin-bottom: 20px;
-    
+    margin-bottom: 30px;
 }
 
 .skills ul {
@@ -524,31 +473,45 @@ header nav ul li a:hover {
 .skills ul li {
     display: flex;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .skills ul li img {
-    width: 60px;
-    margin-right: 0px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+/* Buttons styling */
+.button-container {
+    margin-top: 20px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 .btn-primary {
     background-color: #1e90ff;
     color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #1c7cd6;
 }
 
 .btn-secondary {
     background-color: #555;
     color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
     margin-left: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: #333;
 }
 
 .social-links {
@@ -559,29 +522,59 @@ header nav ul li a:hover {
     width: 30px;
     margin-right: 10px;
 }
-.contact-me a{
-    margin-right: 10px;
-    background-color: green;
-    float:right;
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-right {
+        padding: 0;
+    }
+
+    .about-left {
+        margin-bottom: 30px;
+    }
+
+    .about-right h2 {
+        font-size: 2rem;
+    }
+
+    .about-right p {
+        font-size: 1rem;
+    }
 }
 
+@media screen and (max-width: 480px) {
+    .about-right h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-right p {
+        font-size: 0.9rem;
+    }
+
+    .skills ul li img {
+        width: 40px;
+    }
+}
 
 /* my journey */
 #my-journey {
-    width: 100vw; /* Full width of the viewport */
+    width: 100%;
     padding: 40px 20px;
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
 }
 
 .highlighted-title {
     font-size: 2.5rem;
     color: #3080b5;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
@@ -593,22 +586,22 @@ header nav ul li a:hover {
 }
 
 .timeline {
-    position: relative;
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding-left: 30px; /* Adjust to fit the dot and line */
+    padding-left: 30px;
+    position: relative;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    left: 7px; /* Position the line in the middle of the dots */
+    left: 20px;
     top: 0;
     bottom: 0;
     width: 4px;
-    background-color: #3080b5; /* Line color */
-    z-index: 0; /* Make sure the line stays behind the timeline items */
+    background-color: #3080b5;
+    z-index: 0;
 }
 
 .timeline-item {
@@ -617,7 +610,6 @@ header nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: 1;
 }
 
 .timeline-item::before {
@@ -627,9 +619,8 @@ header nav ul li a:hover {
     background-color: #3080b5;
     border-radius: 50%;
     position: absolute;
-    left: -22px; /* Adjust to align the dot with the timeline */
-    top: 20px; /* Adjust to vertically align the dot */
-    z-index: 1;
+    left: -22px;
+    top: 20px;
 }
 
 .timeline-item h3 {
@@ -643,6 +634,43 @@ header nav ul li a:hover {
     line-height: 1.6;
     color: #666;
     text-align: justify;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 10px;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        padding: 15px;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.5rem;
+    }
+
+    .timeline-item p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .highlighted-title {
+        font-size: 2rem;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.3rem;
+    }
+
+    .timeline-item p {
+        font-size: 0.9rem;
+    }
 }
 /* additional feature*/
 #additional-sections {
@@ -757,8 +785,8 @@ header nav ul li a:hover {
     }
 }
 
-
 /*Certificates*/
+
 /* Section Styles */
 #certificates {
     padding: 60px 20px;
