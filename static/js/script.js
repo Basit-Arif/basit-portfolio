@@ -10,7 +10,7 @@ $(document).ready(function() {
     }
 
     setInterval(changeWord, 2000);
-    console.log("hello")
+    
 
    let index = 0;
     const totalItems = $('.technology-item').length; // Get total number of items
