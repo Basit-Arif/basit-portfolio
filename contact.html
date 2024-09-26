@@ -17,14 +17,19 @@
 
     <!-- Header / Navigation -->
     <header>
-        <nav class="navbar navbar-expand-lg">
-            <h1 class="navbar-brand">abdul-basit.tech</h1>
-            <ul class="navbar-nav">
+        <nav class="navbar">
+            <h1 class="navbar-brand xg-large">abdul-basit.tech</h1>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="navbar-nav" id="nav-links">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <li class="nav-item"><a href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
             </ul>
         </nav>
     </header>
@@ -72,6 +77,17 @@
             </div>
         </div>
     </section>
+    <script>
+        // Select the hamburger and the navigation menu
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('header nav ul');
+    
+        // Add event listener to the hamburger
+        hamburger.addEventListener('click', () => {
+            // Toggle the 'show' class on the nav menu
+            navMenu.classList.toggle('show');
+        });
+    </script>
 
 </body>
 </html>

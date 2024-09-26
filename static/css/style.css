@@ -12,10 +12,8 @@ body {
 }
 
 header {
-    /* background-color: #007BFF; Primary blue for header */
     background-color: #C3DEF0;
-    /* color: white; */
-    color:#000000;
+    color: #000000;
     padding: 20px 0;
     position: fixed;
     top: 0;
@@ -28,7 +26,6 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* max-width: 1200px; */
     max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
@@ -39,7 +36,7 @@ header nav h1 {
 }
 
 header nav ul {
-    display: flex;
+    display: flex; /* Ensure it is always visible on larger screens */
     list-style: none;
 }
 
@@ -48,16 +45,16 @@ header nav ul li {
 }
 
 header nav ul li a {
-    /* color: white; */
-    color:#000000;
+    color: #000000;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #E67E22; /* Highlight color on hover */
+    color: #E67E22;
 }
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -70,49 +67,35 @@ header nav ul li a:hover {
     background-color: #000;
     margin: 4px 0;
 }
+
+/* For mobile devices, hide the navigation by default */
 @media (max-width: 768px) {
     header nav ul {
+        display: none; /* Hide the nav by default */
         flex-direction: column;
+        list-style: none;
         position: absolute;
         top: 60px;
-        left: -100%;
-        width: auto;
+        left: 0;
+        width: 100%;
         background-color: #C3DEF0;
-        transition: left 0.3s ease;
         padding: 10px 0;
-        
     }
 
+    /* Show the hamburger icon */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Show the menu when the .show class is added */
     header nav ul.show {
-        left: 0;
+        display: flex; /* Show the menu in mobile view */
     }
 
     header nav ul li {
         margin: 10px 0;
         text-align: center;
     }
-
-    .hamburger {
-        display: flex;
-    }
-
-    header nav h1 {
-        font-size: 1.5rem;
-    }
-}
-
-/* Media query for smaller mobile devices */
-@media (max-width: 480px) {
-    header nav h1 {
-        font-size: 1.3rem;
-    }
-
-    .hamburger div {
-        width: 20px;
-    }
-    
-    
-
 }
 
 .container{
@@ -672,6 +655,74 @@ header nav ul li a:hover {
         font-size: 0.9rem;
     }
 }
+
+
+.highlighted-title {
+    font-size: 2.5rem;
+    color: #3080b5;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.journey-container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+}
+
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 30px; /* Adjust to fit the dot and line */
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px; /* Position the line in the middle of the dots */
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #3080b5; /* Line color */
+    z-index: 0; /* Make sure the line stays behind the timeline items */
+}
+
+.timeline-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-item::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #3080b5;
+    border-radius: 50%;
+    position: absolute;
+    left: -22px; /* Adjust to align the dot with the timeline */
+    top: 20px; /* Adjust to vertically align the dot */
+    z-index: 1;
+}
+
+.timeline-item h3 {
+    font-size: 1.75rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.timeline-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    text-align: justify;
+}
 /* additional feature*/
 #additional-sections {
     padding: 50px 0;
@@ -786,7 +837,6 @@ header nav ul li a:hover {
 }
 
 /*Certificates*/
-
 /* Section Styles */
 #certificates {
     padding: 60px 20px;
@@ -1350,3 +1400,22 @@ footer {
     }
 }
 
+.service-content {
+    display: flex;
+    align-items: center;
+}
+
+.service-image {
+    flex: 1;
+    margin-right: 20px; /* Add some space between the image and text */
+}
+
+.service-image img {
+    width: 100%; /* Adjust the width of the image */
+    max-width: 150px; /* Limit the maximum width */
+    border-radius: 5px; /* Add some rounded corners to the image */
+}
+
+.service-text {
+    flex: 3; /* Take up more space for the text */
+}
