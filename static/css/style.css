@@ -94,6 +94,9 @@ header nav ul li a:hover {
         margin: 10px 0;
         text-align: center;
     }
+    h1.navbar-brand {
+        font-size: 1.3rem; /* Smaller size for mobile devices */
+    }
 }
 .container{
     /* background: linear-gradient(to right, #007BFF, #28A745); */
