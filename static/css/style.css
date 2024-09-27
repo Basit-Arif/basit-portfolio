@@ -297,7 +297,7 @@ header nav ul li a:hover {
 }
 
 /* Text styling */
-.#portfolio {
+#portfolio {
     background-color: #f8f8f8; /* Light background for a clean, professional look */
     padding: 50px 0; /* Increased padding for more breathing room */
 }
