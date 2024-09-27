@@ -46,11 +46,4 @@ $(document).ready(function() {
     // Set an interval to change slides every 3 seconds
     setInterval(slide, 3000);
 });
-document.addEventListener("DOMContentLoaded", () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.getElementById('nav-links');
 
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
-    });
-});

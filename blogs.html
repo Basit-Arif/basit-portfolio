@@ -32,9 +32,9 @@
                 <div></div>
             </div>
             <ul class="navbar-nav" id="nav-links">
-                <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="$projects">Projects</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
@@ -117,5 +117,14 @@
                 });
         });
     </script>
+    <script> document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.getElementById('nav-links');
+    
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    });
+</script>
 </body>
 </html>

@@ -36,7 +36,7 @@ header nav h1 {
 }
 
 header nav ul {
-    display: flex; /* Ensure it is always visible on larger screens */
+    display: flex; /* Default for larger screens */
     list-style: none;
 }
 
@@ -68,7 +68,7 @@ header nav ul li a:hover {
     margin: 4px 0;
 }
 
-/* For mobile devices, hide the navigation by default */
+/* For mobile devices */
 @media (max-width: 768px) {
     header nav ul {
         display: none; /* Hide the nav by default */
@@ -82,12 +82,10 @@ header nav ul li a:hover {
         padding: 10px 0;
     }
 
-    /* Show the hamburger icon */
     .hamburger {
-        display: flex;
+        display: flex; /* Show the hamburger icon */
     }
 
-    /* Show the menu when the .show class is added */
     header nav ul.show {
         display: flex; /* Show the menu in mobile view */
     }
@@ -97,7 +95,6 @@ header nav ul li a:hover {
         text-align: center;
     }
 }
-
 .container{
     /* background: linear-gradient(to right, #007BFF, #28A745); */
     width: 100%;

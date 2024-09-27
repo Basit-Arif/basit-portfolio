@@ -121,5 +121,14 @@
     <!-- Scripts -->
      <!-- Link to your custom JS -->
     <script src="static/js/script.js"></script>
+    <script> document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.getElementById('nav-links');
+    
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    });
+    </script>
 </body>
 </html>
