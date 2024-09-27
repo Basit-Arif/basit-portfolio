@@ -26,6 +26,7 @@
                 <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#blogs">Blogs</a></li>
             </ul>
         </nav>
     </header>
@@ -34,7 +35,7 @@
             <div class="hero-content">
                 <h1>I am a <span id="changing-text">Data Scientist</span></h1>
                 <p class="hero-description">Harnessing the power of data to drive insights and solutions.</p>
-                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="contact.html" class="btn btn-primary">Get in Touch</a>
             </div>
             <div class="hero-image">
                 <img src="static/img/profile_picture.png" alt="Abdul Basit/ Data Scientist" class="profile-picture">
@@ -194,7 +195,7 @@
             <div class="box">
                 <h3>Get in Touch</h3>
                 <p>Contact me for collaborations, consulting, or to learn more about my work.</p>
-                <a href="#contact" class="btn-box">Contact Me</a>
+                <a href="contact.html" class="btn-box">Contact Me</a>
             </div>
         </div>
     </section>
@@ -249,13 +250,14 @@
         <div class="newsletter-container">
             <h2 class="highlighted-title">Join My Newsletter</h2>
             <p>Stay updated with the latest insights, projects, and news. Subscribe to receive my newsletter!</p>
-            <form action="YOUR_SUBSCRIPTION_ENDPOINT" method="POST" class="newsletter-form">
-                <input type="email" placeholder="Enter your email address" required class="newsletter-input">
+            <form action="https://formspree.io/f/xgvwgony" method="POST" class="newsletter-form">
+                <input type="email" name="email" placeholder="Enter your email address" required class="newsletter-input">
                 <button type="submit" class="newsletter-button">Subscribe</button>
             </form>
         </div>
         <hr class="newsletter-divider">
     </section>
+
 
         <footer>
             <div class="footer-container">
@@ -278,7 +280,7 @@
 
         
 
-    <script src="static/js/script.js">
+    <script src="static/js/script.js"></script>
     <script> document.addEventListener("DOMContentLoaded", () => {
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.getElementById('nav-links');
