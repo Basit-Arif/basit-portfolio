@@ -10,6 +10,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        .tag {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #333;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -41,12 +52,7 @@
     <footer>
         <div class="footer-container">
             <nav class="footer-nav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                
             </nav>
             <span class="footer-brand">abdul-basit.tech</span>
             <div class="social-icons">
@@ -58,40 +64,58 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const mediumFeedUrl = 'https://medium.com/feed/@basitarif235';  // Replace with your Medium RSS Feed URL
+            const mediumFeedUrl = 'https://cors-anywhere.herokuapp.com/https://medium.com/feed/@basitarif235';
+  // Your Medium RSS Feed URL
             const mediumPostsContainer = document.getElementById('medium-posts');
-          
+        
             fetch(mediumFeedUrl)
-              .then(response => response.text())
-              .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-              .then(data => {
-                const items = data.querySelectorAll("item");
-                let html = '';
-                
-                items.forEach(item => {
-                  const title = item.querySelector("title").textContent;
-                  const link = item.querySelector("link").nextSibling.nodeValue.trim();
-                  const pubDate = item.querySelector("pubDate").textContent;
-                  const description = item.querySelector("description").textContent;
-                  const contentSnippet = description.split(' ').slice(0, 20).join(' ') + '...';
-          
-                  html += `
-                    <div class="post">
-                      <h3>${title}</h3>
-                      <p>${contentSnippet}</p>
-                      <p><a href="${link}" target="_blank">Read more</a></p>
-                      <small>Published on: ${new Date(pubDate).toLocaleDateString()}</small>
-                    </div>
-                  `;
+                .then(response => response.text())
+                .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+                .then(data => {
+                    const items = data.querySelectorAll("item");
+                    let html = '';
+        
+                    items.forEach(item => {
+                        const title = item.querySelector("title") ? item.querySelector("title").textContent : 'No Title';
+                        const guid = item.querySelector("guid") ? item.querySelector("guid").textContent.trim() : '#';
+                        const pubDate = item.querySelector("pubDate") ? item.querySelector("pubDate").textContent : 'Unknown Date';
+                        const contentEncodedElement = item.querySelector("content");
+                        const contentEncoded = contentEncodedElement ? contentEncodedElement.textContent : '';
+
+            // Create a temporary DOM element to parse the HTML content
+                        const tempDiv = document.createElement("div");
+                        tempDiv.innerHTML = contentEncoded;
+
+                        // Get text from the parsed HTML and split into words
+                        const textContent = tempDiv.textContent || tempDiv.innerText || '';
+                        const contentSnippet = textContent.split(' ').slice(0, 20).join(' ') + '...';
+
+                        
+                        const categoryElements = item.querySelectorAll("category");
+                        const categories = Array.from(categoryElements).map(cat => cat.textContent.trim());
+
+                        // Creating tag elements
+                        const tagsHtml = categories.map(cat => `<span class="tag">#${cat}</span>`).join(' ');
+
+                        html += `
+                            <div class="post">
+                                <h3>${title}</h3>
+                                <p>${contentSnippet}</p>
+                                <p><a href="${guid}">Read more</a></p>
+                                <small>Published on: ${new Date(pubDate).toLocaleDateString()}</small>
+                                <div class="tags">${tagsHtml}</div>
+                            </div>
+                        `;
+                        
+                    });
+        
+                    mediumPostsContainer.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error("Failed to fetch Medium posts:", error);
+                    mediumPostsContainer.innerHTML = `<p>Failed to load posts. Please try again later.</p>`;
                 });
-          
-                mediumPostsContainer.innerHTML = html;
-              })
-              .catch(error => {
-                console.error("Failed to fetch Medium posts:", error);
-                mediumPostsContainer.innerHTML = `<p>Failed to load posts. Please try again later.</p>`;
-              });
-          });
+        });
     </script>
 </body>
 </html>
