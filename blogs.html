@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Agency</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="navbar-brand xg-large">abdul-basit.tech</h1>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="navbar-nav" id="nav-links">
+                <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="blog-posts" class="blog-posts">
+        <h2>Latest Posts</h2>
+        <div id="medium-posts" class="posts-container">
+          <!-- Blog posts will be loaded here dynamically -->
+        </div>
+      </section>
+
+
+    <footer>
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <span class="footer-brand">abdul-basit.tech</span>
+            <div class="social-icons">
+                <a href="https://github.com/Basit-Arif" target="_blank"><img src="static/img/github-logo.png" alt="Github"></a>
+                <a href="https://x.com/__Abdul_Basit" target="_blank"><img src="static/img/x.svg" alt="X"></a>
+                <a href="https://www.linkedin.com/in/abdul-basit-531a97189/" target="_blank"><img src="static/img/linkedin.png" alt="Linkedin"></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mediumFeedUrl = 'https://medium.com/feed/@basitarif235';  // Replace with your Medium RSS Feed URL
+            const mediumPostsContainer = document.getElementById('medium-posts');
+          
+            fetch(mediumFeedUrl)
+              .then(response => response.text())
+              .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+              .then(data => {
+                const items = data.querySelectorAll("item");
+                let html = '';
+                
+                items.forEach(item => {
+                  const title = item.querySelector("title").textContent;
+                  const link = item.querySelector("link").nextSibling.nodeValue.trim();
+                  const pubDate = item.querySelector("pubDate").textContent;
+                  const description = item.querySelector("description").textContent;
+                  const contentSnippet = description.split(' ').slice(0, 20).join(' ') + '...';
+          
+                  html += `
+                    <div class="post">
+                      <h3>${title}</h3>
+                      <p>${contentSnippet}</p>
+                      <p><a href="${link}" target="_blank">Read more</a></p>
+                      <small>Published on: ${new Date(pubDate).toLocaleDateString()}</small>
+                    </div>
+                  `;
+                });
+          
+                mediumPostsContainer.innerHTML = html;
+              })
+              .catch(error => {
+                console.error("Failed to fetch Medium posts:", error);
+                mediumPostsContainer.innerHTML = `<p>Failed to load posts. Please try again later.</p>`;
+              });
+          });
+    </script>
+</body>
+</html>
