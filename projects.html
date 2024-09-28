@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Agency</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="navbar-brand xg-large">abdul-basit.tech</h1>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="navbar-nav" id="nav-links">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="container">
+            
+            <div class="projects-grid" id="projects-container">
+                <!-- JavaScript will dynamically insert project cards here -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <span class="footer-brand">abdul-basit.tech</span>
+            <div class="social-icons">
+                <a href="https://github.com/Basit-Arif" target="_blank"><img src="static/img/github-logo.png" alt="Github"></a>
+                <a href="https://x.com/__Abdul_Basit" target="_blank"><img src="static/img/x.svg" alt="X"></a>
+                <a href="https://www.linkedin.com/in/abdul-basit-531a97189/" target="_blank"><img src="static/img/linkedin.png" alt="Linkedin"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.getElementById('nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+        });
+
+        const repos = [
+            { owner: "Basit-Arif", repo: "streamlit", path: "ImageConvertor" },
+            { owner: "Basit-Arif", repo: "generative_ai", path: "generative_ai_projects/Revolutionizing_Chatbot" },
+            { owner: "Basit-Arif", repo: "ML-Project", path: "/" }
+            // Add more repositories as needed
+        ];
+
+        // Replace 'your_token_here' with your GitHub access token securely
+        const token = "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"; // Keep it private!
+
+        // Define accepted image file extensions
+        const acceptedImageExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.bmp'];
+
+        // Fetch the contents of all repositories
+        async function fetchAllProjects() {
+            for (let i = 0; i < repos.length; i++) {
+                const { owner, repo, path } = repos[i];
+                await fetchProjects(path, owner, repo);
+            }
+        }
+
+        // Fetch the contents of the selected repo or folder
+        async function fetchProjects(path, owner, repo) {
+            const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+
+            try {
+                const response = await fetch(url, {
+                    headers: {
+                        'Authorization': `token ${token}`
+                    }
+                });
+                const data = await response.json();
+
+                // Check if we received valid data
+                if (Array.isArray(data)) {
+                    displayProjects(data, path,repo);
+                } else {
+                    console.error('Error fetching projects:', data);
+                }
+            } catch (error) {
+                console.error('Fetch error:', error);
+            }
+        }
+
+        // Function to display the list of image files and directories
+        function displayProjects(data, currentPath,repo) {
+            const projectsContainer = document.getElementById('projects-container'); // Correct target
+
+            let hasContent = false;
+            const excludedFolders = ['__pycache__'];
+            // Loop through each item in the fetched data
+            for (const item of data) {
+                
+                    
+                if (item.type === 'file' && acceptedImageExtensions.some(ext => item.name.endsWith(ext))) {
+                    // Create a project block for each image file found
+                    const imageUrl = item.download_url;
+                    const urlParts = item.html_url.split("/");
+                    const urlWithoutLastPart = urlParts.slice(0, -1).join("/"); // Join back the remaining parts
+                    
+                    
+                    const projectBlock = document.createElement('div');
+                    projectBlock.className = 'project-block';
+                    projectBlock.innerHTML = `
+                        <div class="project-card">
+                            <div class="project-card-image" style="background-image: url('${imageUrl}')">
+                                <img src="${imageUrl}" alt="${currentPath.split('/').pop()}">
+                            </div>
+                            <div class="project-card-content">
+                                <h3>${currentPath.split('/').pop() || item.name.split(".")[0]}</h3> <!-- Display repo/folder name -->
+                               
+                                <a href="${urlWithoutLastPart}" target="_blank" class="project-card-link">Read More</a>
+                            </div>
+                        </div>
+                    `;
+                    
+                    projectsContainer.appendChild(projectBlock);
+                    hasContent = true;
+                    break;
+                }
+            }
+
+            // If no valid content was found, show a message
+            if (!hasContent) {
+                projectsContainer.innerHTML += '<p>No image files or folders found in this directory.</p>';
+            }
+        }
+
+        // Call the function to fetch and display the main repo contents
+        fetchAllProjects();
+    </script>
+</body>
+</html>
