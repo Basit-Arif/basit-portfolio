@@ -78,7 +78,7 @@
         ];
 
         // Replace 'your_token_here' with your GitHub access token securely
-        const token = "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"; // Keep it private!
+        // Keep it private!
 
         // Define accepted image file extensions
         const acceptedImageExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.bmp'];
@@ -93,15 +93,29 @@
 
         // Fetch the contents of the selected repo or folder
         async function fetchProjects(path, owner, repo) {
-            const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+            const lambdaurl = `https://c6u8d5s3je.execute-api.ap-south-1.amazonaws.com/development`;
+
 
             try {
-                const response = await fetch(url, {
+                const response = await fetch(lambdaurl, {
+                    method: 'POST',
                     headers: {
-                        'Authorization': `token ${token}`
-                    }
+                        'Content-Type': 'application/json', // Set content type to application/json
+                    },
+                    body: JSON.stringify({
+                        owner: owner,
+                        repo: repo,
+                        path: path
+                    }) // Use JSON.stringify to convert to a JSON string
                 });
-                const data = await response.json();
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+        
+                const project = await response.json(); // Parse the JSON from the response
+        
+                // Since the response body is a JSON string, parse it again
+                const data = JSON.parse(project.body);
 
                 // Check if we received valid data
                 if (Array.isArray(data)) {
