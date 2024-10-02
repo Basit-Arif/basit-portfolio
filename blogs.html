@@ -64,16 +64,34 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const mediumFeedUrl = 'https://cors-anywhere.herokuapp.com/https://medium.com/feed/@basitarif235';
+            const mediumFeedUrl = 'https://8xalb3u6z7.execute-api.ap-south-1.amazonaws.com/development/';
   // Your Medium RSS Feed URL
             const mediumPostsContainer = document.getElementById('medium-posts');
-        
-            fetch(mediumFeedUrl)
-                .then(response => response.text())
-                .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-                .then(data => {
-                    const items = data.querySelectorAll("item");
-                    let html = '';
+            const requestData = {
+                username: "basitarif235"
+            };
+           
+            fetch(mediumFeedUrl, {
+                method: 'POST', // Use POST method
+                body: JSON.stringify(requestData) // Convert requestData to JSON string
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok: ' + response.statusText);
+                }
+                return response.json(); // Assuming the response is in JSON format
+            })
+            .then(result => {
+                // The data is inside the 'data' field of the result
+                const xmlString = result.data;
+            
+                // Parse the XML string
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+            
+                // Extract items from the parsed XML
+                const items = xmlDoc.querySelectorAll("item");
+                let html = '';
         
                     items.forEach(item => {
                         const title = item.querySelector("title") ? item.querySelector("title").textContent : 'No Title';
