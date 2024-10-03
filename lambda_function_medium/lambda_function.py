@@ -22,17 +22,3 @@ def lambda_handler(event, context=None):
         print(f"Error fetching feed: {e}")
         return {"status": "failure", "error": str(e)}
 
-if __name__ == "__main__":
-    # Simulate an event for local testing
-    test_event = {
-        "username": "basitarif235"  # Replace with actual username to test
-    }
-    
-    # Simulate Lambda context (optional)
-    context = {}
-    
-    # Call the lambda handler directly for testing
-    result = lambda_handler(test_event, context)
-    
-    # Output the result
-    print(json.dumps(result, indent=4))
