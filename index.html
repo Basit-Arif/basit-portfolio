@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WCL3GE63T8"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
         <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -20,6 +21,20 @@
         </script>
 </head>
 <body>
+    <div id="chatbot-container"></div>
+    <script>
+        (function() {
+            var chatbotContainer = document.getElementById('chatbot-container');
+            var iframe = document.createElement('iframe');
+            iframe.src = 'https://13a9-58-27-251-202.ngrok-free.app'; // Replace with your chatbot's URL
+            iframe.style.width = '400px'; // Set width
+            iframe.style.height = '600px'; // Set height
+            iframe.style.border = 'none'; // No border
+            chatbotContainer.appendChild(iframe);
+        })();
+    </script>
+    
+    
     <header>
         <nav class="navbar">
             <h1 class="navbar-brand xg-large">abdul-basit.tech</h1>
@@ -38,6 +53,7 @@
             </ul>
         </nav>
     </header>
+    
     <div class="container">
         <section id="hero">
             <div class="hero-content">
@@ -49,16 +65,21 @@
                 <img src="static/img/profile_picture.png" alt="Abdul Basit/ Data Scientist" class="profile-picture">
             </div>
         </section>
+        
     </div>
+    
     <section id="portfolio">
+        
         <div class="portfolio-container">
             <div class="portfolio-image left">
+                
                 <img src="static/img/portfolio_image.png" alt="left Image">
             </div>
             <div class="portfolio-text">
                 <h1>Welcome to My Personal Portfolio</h1>
             </div>
             <div class="portfolio-image right">
+                
                 <img src="static/img/personal_portfolio-right.png" alt="Right Image">
             </div>
         </div>
